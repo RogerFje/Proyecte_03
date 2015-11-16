@@ -115,3 +115,25 @@ height: auto;
   opacity: 1;
 }
   /**/
+.crunchify-top:hover {
+  color: #fff !important;
+  background-color: #ed702b;
+  text-decoration: none;
+}
+ 
+.crunchify-top {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3.2rem;
+  bottom: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 1.4rem;
+  height: 6.2rem;
+  line-height: 6.2rem;
+  position: fixed;
+  right: 1rem;
+  text-align: center;
+  text-decoration: none;
+  width: 6.2rem;
+}

@@ -20,7 +20,7 @@
       <script src="//oss.maxcdn.com/bootbox/4.2.0/bootbox.min.js"></script>
 
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-</script>
+
  
 <script>            
   jQuery(document).ready(function() {
