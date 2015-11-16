@@ -19,6 +19,29 @@
       <script type="text/javascript" src="js/bootstrap-table-ca-ES.js"></script>
       <script src="//oss.maxcdn.com/bootbox/4.2.0/bootbox.min.js"></script>
 
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</script>
+ 
+<script>            
+  jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+      if (jQuery(this).scrollTop() > offset) {
+        jQuery('.crunchify-top').fadeIn(duration);
+      } else {
+        jQuery('.crunchify-top').fadeOut(duration);
+      }
+    });
+ 
+    jQuery('.crunchify-top').click(function(event) {
+      event.preventDefault();
+      jQuery('html, body').animate({scrollTop: 0}, duration);
+      return false;
+    })
+  });
+</script>
+
       <!-- BOOTSTRAP SELECT -->
       <link rel="stylesheet" href="css/bootstrap-select.min.css">
       <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
