@@ -52,6 +52,7 @@
       
       <!-- Generic page styles -->
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/encuesta.css">
       <link rel="stylesheet" type="text/css" href="css/global.css">
       <link rel="icon" type="image/png" href="img/favicon.png" />
   </head>
@@ -62,6 +63,7 @@
             <li><a href="user.php"><img src ='img/logo.png'width='250' heigth='250'/></a></li>
             <li><a href="busqueda_reservas.php" class="navList">Reservas</a></li>
             <li><a href="incidencias.php" class="navList">Incidencias</a></li>
+            <li><a href="contacto.php" class="navList">Contacto</a></li>
             <li><a href="logout.php" class="navLogout">Salir</a></li>
             <li>
               <?php

@@ -29,6 +29,7 @@
       
       <!-- Generic page styles -->
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/encuesta.css">
       <link rel="stylesheet" type="text/css" href="css/global.css">
       <link rel="icon" type="image/png" href="img/favicon.png" />
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
