@@ -36,7 +36,7 @@
 			<select name="rol"><br/>
  			 <option value="0">user normal</option>
  			 <option value="1">admin</option>
-			</select>
+			</select><br/>
 
 			imagen:<br/>
 

@@ -56,7 +56,7 @@
 				
   					$fichero="img/$user_id".".jpg";
 
-	
+	echo "<a href='modificar.php?id=$usuario[id_user]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
 					echo "</td></tr>";
 				}
 
