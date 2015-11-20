@@ -29,47 +29,50 @@
 			$datos = mysqli_query($con, $sql);
 
 			?>
-			<table border>
-				<tr>					
-
-					<th>user_id</th>
-				
-					<th>Nombre</th>
-
-				</tr>
+			
+			<div class="containerus" style="margin-top:10px">
+			
 
 				<?php
 
 				//recorremos los resultados y los mostramos por pantalla
 				//la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
+
 				while ($usuario = mysqli_fetch_array($datos)){
 					
-					echo "<td>" . substr($usuario['id_user'], 0, 25) . "</td>";
-					echo "<td>";
-					echo "<a href='ver.php?id=$usuario[id_user]'>$usuario[nom]</a>";
+					echo "<div classs='ver'>";
+					echo "";
+					echo "$usuario[nom]";
 					if(file_exists($fichero)&&(($user_id) != '')){
-                  	echo "<div class='perfil'><img src='$fichero' width='50' heigth='50' ></div>";
+                  	echo "<div class='perfil2'><img src='$fichero' width='50' heigth='50' ></div>";
                 	}
                		 else{
-                 	 echo "<div class='perfil'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
+                 	 echo "<div class='perfil2'><img src ='img/no_disponible.jpg'width='50' heigth='50'/></div>";
                		 }
 				
   					$fichero="img/$user_id".".jpg";
 
-	echo "<a href='modificar.php?id=$usuario[id_user]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
-					echo "</td></tr>";
+					echo "<div class='modif'><a href='modificar.php?id=$usuario[id_user]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+					if($usuario['estado']==1){
+						echo "<a href='activar_desactivar.proc.php?id=$usuario[id_user]'><i class='fa fa-eye-slash fa-2x fa-pull-left fa-border' title='desactivar'></i></a>";
+					} else {
+						echo "<a href='activar_desactivar.proc.php?id=$usuario[id_user]'><i class='fa fa-eye fa-2x fa-pull-left fa-border' title='activar'></i></a>";
+					}
+					echo "</div></div>";
 				}
 
 				?>
 
-			</table>
-
+			
+		</div>
+		<div class="nuevo">
 			<a href="insertar.php"><i class='fa fa-plus-square fa-2x fa-pull-left fa-border'></i></a>
-
+		</div>
 				<?php
 			//cerramos la conexión con la base de datos
 			mysqli_close($con);
 		?>
+
 	</body>
 
 <?php  
