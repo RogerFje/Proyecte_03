@@ -1,6 +1,6 @@
 <?php
 	include_once 'conexion.php';
-	include_once 'header.php';	
+	include_once 'header_admin.php';	
 
 	$usuario = $_SESSION['nom'];
 	$user_id = $_SESSION['id_user'];

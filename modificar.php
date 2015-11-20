@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 	include_once 'conexion.php';
-	include_once 'header.php';	
+	include_once 'header_admin.php';	
 
 	$usuario = $_SESSION['nom'];
 	$user_id = $_SESSION['id_user'];
@@ -12,6 +12,12 @@
 		<meta charset="utf-8"/>
 		<title>Ejemplo de formularios con datos en BD</title>
 	</head>
+	<style type="text/css">
+	textarea {
+  width: auto !important;
+  margin:0 auto;
+}
+</style>
 	<body>
 		<?php
 			//realizamos la conexión con mysql
@@ -28,15 +34,17 @@
 			if(mysqli_num_rows($datos)>0){
 				$usuario=mysqli_fetch_array($datos);
 				?>
+				<div class="containermod" style="margin-top:10px">
+					<div class="contenmod">
 				<form name="formulario1" action="modificar.proc.php" method="get">
 				<input type="hidden" name="id" value="<?php echo $usuario['id_user']; ?>">
-				Nombre:<br/>
-				<input type="text" name="nom" size="20" maxlength="25" value="<?php echo $usuario['nom']; ?>"><br/>
-				Contraseña:<br/>
-				<textarea name="pass" cols="20" rows="5"><?php echo $usuario['pass']; ?></textarea><br/>
-				imagen<br/>
-				<input type="text" name="img" size="5" maxlength="8" value="<?php echo $usuario['img']; ?>"><br/>
-				rol:<br/>
+				Nombre:
+				<input type="text" name="nom" size="20" maxlength="25" value="<?php echo $usuario['nom']; ?>">
+				Contraseña:
+				<input type="password" name="pass" value="<?php echo $usuario['pass']; ?>">
+				imagen:
+				<input type="text" name="img" size="5" maxlength="8" value="<?php echo $usuario['img']; ?>">
+				rol:
 			<select name="rol">
 				<?php
 					//esta consulta devuelve todos los datos del producto cuyo campo clave (pro_id) es igual a la id que nos llega por la barra de direcciones
@@ -62,6 +70,13 @@
 				</select><br/><br/>
 				<input type="submit" value="Guardar">
 				</form>
+				<div class="btn btn-primary">
+				<a href="usuarios.php">Volver</a>
+			</div>
+			</div>
+			</div>
+			
+
 				<?php
 			} else {
 				echo "Producto con id=$_REQUEST[id] no encontrado!";
@@ -70,7 +85,7 @@
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<a href="usuarios.php">Volver</a>
+		
 	</body>
 		<?php  
 	include 'footer.php';

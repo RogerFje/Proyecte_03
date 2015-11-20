@@ -1,7 +1,7 @@
 
 <?php
 	include_once 'conexion.php';
-	include_once 'header.php';	
+	include_once 'header_admin.php';	
 
 	$usuario = $_SESSION['nom'];
 	$user_id = $_SESSION['id_user'];
@@ -27,26 +27,33 @@
 			//lanzamos la sentencia sql
 			$datos = mysqli_query($con, $sql);
 			?>
+			<div class="containermod" style="margin-top:10px">
+					<div class="contenmod">
 		<form action="insertar.proc.php" method="GET">
-			Nombre:<br/>
-			<input type="text" name="nom" size="20" maxlength="25"><br/>
-			Contraseña:<br/> 
-        	<input type="password" name="pass" class="form-input" required/><br/>
-			rol:<br/>
-			<select name="rol"><br/>
+			Nombre:
+			<input type="text" name="nom" size="20" maxlength="25">
+			Contraseña:
+        	<input type="password" name="pass" class="form-input" required/>
+			rol:
+			<select name="rol">
  			 <option value="0">user normal</option>
  			 <option value="1">admin</option>
-			</select><br/>
+			</select>
 
-			imagen:<br/>
+			imagen:
 
-			<input type="text" name="img" size="5" maxlength="8"><br/>
+			<input type="text" name="img" size="5" maxlength="8">
 			
 		    <br/><br/>
 			<input type="submit" value="Enviar">
 		</form>
+			<div class="btn btn-primary">
+				<a href="usuarios.php">Volver</a>
+			</div>
+			</div>
+			</div>
 		<br/><br/>
-		<a href="usuarios.php">Volver</a>
+		
 	</body>
 	<?php  
 	include 'footer.php';
