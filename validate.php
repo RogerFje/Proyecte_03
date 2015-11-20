@@ -25,6 +25,7 @@ if($row = mysql_fetch_array($result))
     //Almacenamos el nombre de usuario en una variable de sesión usuario
     $_SESSION['nom'] = $user;
     $_SESSION['id_user'] = $row["id_user"] ;
+    if($row['estado']== 1){
       if($row['rol'] == 1){
         //Redireccionamos a la pagina: admin.php
         header("Location: admin.php");  
@@ -32,7 +33,15 @@ if($row = mysql_fetch_array($result))
         //Redireccionamos a la pagina: user.php
         header("Location: user.php");
       }
+   }else{
+    ?>
+    <script languaje="javascript">
+        alert("¡Este usuario esta deshabilitado!");
+        location.href = "index.html";
+    </script>
+    <?php
    }
+ }
    else
    {
       //En caso que la contraseña sea incorrecta hacemos un alert y redireccionamos a index.html
